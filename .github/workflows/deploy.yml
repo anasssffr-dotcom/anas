@@ -1,4 +1,4 @@
-name: Build & Deploy to InfinityFree
+name: Build & Deploy (client folder)
 
 on:
   push:
@@ -11,27 +11,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout the repo
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Setup Node (لو عايز إصدار معين غير 18 غيّره)
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      # 3. Install Dependencies
+      # 🔥 ادخل فولدر client
       - name: Install dependencies
         run: |
+          cd client
           npm install
 
-      # 4. Build Project (Vite)
       - name: Build project
         run: |
+          cd client
           npm run build
 
-      # 5. Deploy dist/ إلى InfinityFree عبر FTP
+      # 🔥 ارفع dist اللي جواه client
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
@@ -40,6 +39,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
           protocol: ftp
-          local-dir: ./dist
+          local-dir: ./client/dist
           server-dir: /htdocs/
           git-ftp-args: "--insecure"
