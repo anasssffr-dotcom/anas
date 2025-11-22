@@ -14,40 +14,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # -------------------------------
-      # Setup Node.js
-      # -------------------------------
       - name: Install Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # -------------------------------
-      # Install dependencies
-      # -------------------------------
-      - name: Install dependencies (force)
+      - name: Install dependencies
         run: |
           npm install --legacy-peer-deps
 
-      # -------------------------------
-      # Build project
-      # -------------------------------
-      - name: Build client
+      - name: Build project
         run: |
           npm run build
 
-      # -------------------------------
-      # Prepare output for upload
-      # -------------------------------
-      - name: Prepare output folder
+      - name: Prepare output
         run: |
           rm -rf output
           mkdir output
-          cp -r dist/* output/
+          cp -r dist/public/* output/
 
-      # -------------------------------
-      # Upload to InfinityFree via FTP
-      # -------------------------------
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
