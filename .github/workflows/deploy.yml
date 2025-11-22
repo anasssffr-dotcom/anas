@@ -4,8 +4,7 @@ on:
   push:
     branches:
       - main
-
-  workflow_dispatch:   # 👈 ده اللي يسمحلك تشغيله يدويًا
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -15,9 +14,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ----------------------------------
-      #       CLIENT BUILD (FIXED)
-      # ----------------------------------
       - name: Install Node
         uses: actions/setup-node@v4
         with:
@@ -25,26 +21,18 @@ jobs:
 
       - name: Install dependencies (force)
         run: |
-          cd client
           npm install --legacy-peer-deps
 
       - name: Build client
         run: |
-          cd client
           npm run build
 
-      # ----------------------------------
-      #   COPY BUILD OUTPUT TO ROOT
-      # ----------------------------------
-      - name: Move build output
+      - name: Prepare output folder
         run: |
-          rm -rf ./dist
-          mkdir dist
-          cp -r client/dist/* dist/
+          rm -rf output
+          mkdir output
+          cp -r dist/* output/
 
-      # ----------------------------------
-      #     FTP DEPLOY TO INFINITYFREE
-      # ----------------------------------
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
@@ -53,5 +41,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           port: ${{ secrets.FTP_PORT }}
-          local-dir: ./dist
+          local-dir: ./output
           server-dir: /htdocs/
