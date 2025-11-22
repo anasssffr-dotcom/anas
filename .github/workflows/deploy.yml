@@ -5,6 +5,8 @@ on:
     branches:
       - main
 
+  workflow_dispatch:   # 👈 ده اللي يسمحلك تشغيله يدويًا
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
