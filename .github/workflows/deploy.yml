@@ -3,11 +3,13 @@ name: Deploy to InfinityFree via FTP
 on:
   push:
     branches:
-      - main   # غير الفرع لو بتستخدم branch تاني مثل "master" أو "prod"
+      - main      # غيرها لو بتشتغل على فرع تاني زي master
+  workflow_dispatch:   # للتشغيل اليدوي Run Workflow
 
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -18,8 +20,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}    # اختياري، لو ما خليتهش سيستخدم 21
-          protocol: ftp                   # ftp أو ftps (لو InfinityFree يدعم FTPS)
-          local-dir: ./                    # المجلد اللي هيُرفع منه داخل الريبو
-          server-dir: /htdocs/             # مجلد الوجهة على السيرفر - عدّله لو لازم
-          git-ftp-args: --insecure         # اختياري، لو في مشاكل شهادة (يمكن حذفها)
+          port: ${{ secrets.FTP_PORT }}        # اختياري، لو مش موجود هيبقى 21 تلقائيًا
+          protocol: ftp                        # InfinityFree عادةً يدعم FTP فقط
+          local-dir: ./                        # ارفع كل ملفات الريبو
+          server-dir: /htdocs/                 # مجلد InfinityFree
+          git-ftp-args: "--insecure"           # اختياري — يمنع مشاكل SSL
