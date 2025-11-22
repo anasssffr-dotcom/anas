@@ -1,10 +1,9 @@
-name: Build & Deploy (client folder)
+name: Deploy to InfinityFree via FTP
 
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -14,31 +13,43 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      # ----------------------------------
+      #       CLIENT BUILD (FIXED)
+      # ----------------------------------
+      - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
-      # 🔥 ادخل فولدر client
-      - name: Install dependencies
+      - name: Install dependencies (force)
         run: |
           cd client
-          npm install
+          npm install --legacy-peer-deps
 
-      - name: Build project
+      - name: Build client
         run: |
           cd client
           npm run build
 
-      # 🔥 ارفع dist اللي جواه client
+      # ----------------------------------
+      #   COPY BUILD OUTPUT TO ROOT
+      # ----------------------------------
+      - name: Move build output
+        run: |
+          rm -rf ./dist
+          mkdir dist
+          cp -r client/dist/* dist/
+
+      # ----------------------------------
+      #     FTP DEPLOY TO INFINITYFREE
+      # ----------------------------------
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
           protocol: ftp
-          local-dir: ./client/dist
+          port: ${{ secrets.FTP_PORT }}
+          local-dir: ./dist
           server-dir: /htdocs/
-          git-ftp-args: "--insecure"
