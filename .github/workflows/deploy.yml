@@ -1,27 +1,45 @@
-name: Deploy to InfinityFree via FTP
+name: Build & Deploy to InfinityFree
 
 on:
   push:
     branches:
-      - main      # غيرها لو بتشتغل على فرع تاني زي master
-  workflow_dispatch:   # للتشغيل اليدوي Run Workflow
+      - main
+  workflow_dispatch:
 
 jobs:
-  ftp-deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      # 1. Checkout the repo
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Sync files via FTP
+      # 2. Setup Node (لو عايز إصدار معين غير 18 غيّره)
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # 3. Install Dependencies
+      - name: Install dependencies
+        run: |
+          npm install
+
+      # 4. Build Project (Vite)
+      - name: Build project
+        run: |
+          npm run build
+
+      # 5. Deploy dist/ إلى InfinityFree عبر FTP
+      - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}        # اختياري، لو مش موجود هيبقى 21 تلقائيًا
-          protocol: ftp                        # InfinityFree عادةً يدعم FTP فقط
-          local-dir: ./                        # ارفع كل ملفات الريبو
-          server-dir: /htdocs/                 # مجلد InfinityFree
-          git-ftp-args: "--insecure"           # اختياري — يمنع مشاكل SSL
+          port: ${{ secrets.FTP_PORT }}
+          protocol: ftp
+          local-dir: ./dist
+          server-dir: /htdocs/
+          git-ftp-args: "--insecure"
