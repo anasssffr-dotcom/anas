@@ -1,0 +1,25 @@
+# fly.toml app configuration file generated for chat-app-backend-long-resonance-7115 on 2025-11-23T00:05:56+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'chat-app-backend-long-resonance-7115'
+primary_region = 'cdg'
+
+[build]
+  dockerfile = 'Dockerfile'
+
+[env]
+  NODE_ENV = 'production'
+
+[[services]]
+  protocol = 'tcp'
+  internal_port = 3000
+
+  [[services.ports]]
+    port = 80
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1

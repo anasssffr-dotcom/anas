@@ -1,0 +1,327 @@
+# flyctl launch added from .gitignore
+# Dependencies
+**\**\node_modules
+**\.pnpm-store
+
+# Build outputs
+**\dist
+**\build
+**\*.dist
+
+# Environment variables
+**\.env
+**\.env.local
+**\.env.development.local
+**\.env.test.local
+**\.env.production.local
+
+# IDE and editor files
+**\.vscode
+**\.idea
+**\*.swp
+**\*.swo
+**\*~
+
+# OS generated files
+**\.DS_Store
+**\.DS_Store?
+**\._*
+**\.Spotlight-V100
+**\.Trashes
+**\ehthumbs.db
+**\Thumbs.db
+
+# Logs
+**\logs
+**\*.log
+**\npm-debug.log*
+**\yarn-debug.log*
+**\yarn-error.log*
+**\pnpm-debug.log*
+**\lerna-debug.log*
+
+# Runtime data
+**\pids
+**\*.pid
+**\*.seed
+**\*.pid.lock
+**\*.bak
+
+# Coverage directory used by tools like istanbul
+**\coverage
+**\*.lcov
+
+# nyc test coverage
+**\.nyc_output
+
+# Dependency directories
+**\jspm_packages
+
+# TypeScript cache
+**\*.tsbuildinfo
+
+# Optional npm cache directory
+**\.npm
+
+# Optional eslint cache
+**\.eslintcache
+
+# Microbundle cache
+**\.rpt2_cache
+**\.rts2_cache_cjs
+**\.rts2_cache_es
+**\.rts2_cache_umd
+
+# Optional REPL history
+**\.node_repl_history
+
+# Output of 'npm pack'
+**\*.tgz
+
+# Yarn Integrity file
+**\.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+**\.cache
+**\.parcel-cache
+
+# Next.js build output
+**\.next
+
+# Nuxt.js build / generate output
+**\.nuxt
+
+# Gatsby files
+**\.cache
+
+# Storybook build outputs
+**\.out
+**\.storybook-out
+
+# Temporary folders
+**\tmp
+**\temp
+
+# Database
+**\*.db
+**\*.sqlite
+**\*.sqlite3
+
+# flyctl launch added from anas-master\.gitignore
+# Dependencies
+anas-master\**\**\node_modules
+anas-master\**\.pnpm-store
+
+# Build outputs
+anas-master\**\dist
+anas-master\**\build
+anas-master\**\*.dist
+
+# Environment variables
+anas-master\**\.env
+anas-master\**\.env.local
+anas-master\**\.env.development.local
+anas-master\**\.env.test.local
+anas-master\**\.env.production.local
+
+# IDE and editor files
+anas-master\**\.vscode
+anas-master\**\.idea
+anas-master\**\*.swp
+anas-master\**\*.swo
+anas-master\**\*~
+
+# OS generated files
+anas-master\**\.DS_Store
+anas-master\**\.DS_Store?
+anas-master\**\._*
+anas-master\**\.Spotlight-V100
+anas-master\**\.Trashes
+anas-master\**\ehthumbs.db
+anas-master\**\Thumbs.db
+
+# Logs
+anas-master\**\logs
+anas-master\**\*.log
+anas-master\**\npm-debug.log*
+anas-master\**\yarn-debug.log*
+anas-master\**\yarn-error.log*
+anas-master\**\pnpm-debug.log*
+anas-master\**\lerna-debug.log*
+
+# Runtime data
+anas-master\**\pids
+anas-master\**\*.pid
+anas-master\**\*.seed
+anas-master\**\*.pid.lock
+anas-master\**\*.bak
+
+# Coverage directory used by tools like istanbul
+anas-master\**\coverage
+anas-master\**\*.lcov
+
+# nyc test coverage
+anas-master\**\.nyc_output
+
+# Dependency directories
+anas-master\**\jspm_packages
+
+# TypeScript cache
+anas-master\**\*.tsbuildinfo
+
+# Optional npm cache directory
+anas-master\**\.npm
+
+# Optional eslint cache
+anas-master\**\.eslintcache
+
+# Microbundle cache
+anas-master\**\.rpt2_cache
+anas-master\**\.rts2_cache_cjs
+anas-master\**\.rts2_cache_es
+anas-master\**\.rts2_cache_umd
+
+# Optional REPL history
+anas-master\**\.node_repl_history
+
+# Output of 'npm pack'
+anas-master\**\*.tgz
+
+# Yarn Integrity file
+anas-master\**\.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+anas-master\**\.cache
+anas-master\**\.parcel-cache
+
+# Next.js build output
+anas-master\**\.next
+
+# Nuxt.js build / generate output
+anas-master\**\.nuxt
+
+# Gatsby files
+anas-master\**\.cache
+
+# Storybook build outputs
+anas-master\**\.out
+anas-master\**\.storybook-out
+
+# Temporary folders
+anas-master\**\tmp
+anas-master\**\temp
+
+# Database
+anas-master\**\*.db
+anas-master\**\*.sqlite
+anas-master\**\*.sqlite3
+
+# flyctl launch added from anas-master\chatapp1\.gitignore
+# Dependencies
+anas-master\chatapp1\**\**\node_modules
+anas-master\chatapp1\**\.pnpm-store
+
+# Build outputs
+anas-master\chatapp1\**\dist
+anas-master\chatapp1\**\build
+anas-master\chatapp1\**\*.dist
+
+# Environment variables
+anas-master\chatapp1\**\.env
+anas-master\chatapp1\**\.env.local
+anas-master\chatapp1\**\.env.development.local
+anas-master\chatapp1\**\.env.test.local
+anas-master\chatapp1\**\.env.production.local
+
+# IDE and editor files
+anas-master\chatapp1\**\.vscode
+anas-master\chatapp1\**\.idea
+anas-master\chatapp1\**\*.swp
+anas-master\chatapp1\**\*.swo
+anas-master\chatapp1\**\*~
+
+# OS generated files
+anas-master\chatapp1\**\.DS_Store
+anas-master\chatapp1\**\.DS_Store?
+anas-master\chatapp1\**\._*
+anas-master\chatapp1\**\.Spotlight-V100
+anas-master\chatapp1\**\.Trashes
+anas-master\chatapp1\**\ehthumbs.db
+anas-master\chatapp1\**\Thumbs.db
+
+# Logs
+anas-master\chatapp1\**\logs
+anas-master\chatapp1\**\*.log
+anas-master\chatapp1\**\npm-debug.log*
+anas-master\chatapp1\**\yarn-debug.log*
+anas-master\chatapp1\**\yarn-error.log*
+anas-master\chatapp1\**\pnpm-debug.log*
+anas-master\chatapp1\**\lerna-debug.log*
+
+# Runtime data
+anas-master\chatapp1\**\pids
+anas-master\chatapp1\**\*.pid
+anas-master\chatapp1\**\*.seed
+anas-master\chatapp1\**\*.pid.lock
+anas-master\chatapp1\**\*.bak
+
+# Coverage directory used by tools like istanbul
+anas-master\chatapp1\**\coverage
+anas-master\chatapp1\**\*.lcov
+
+# nyc test coverage
+anas-master\chatapp1\**\.nyc_output
+
+# Dependency directories
+anas-master\chatapp1\**\jspm_packages
+
+# TypeScript cache
+anas-master\chatapp1\**\*.tsbuildinfo
+
+# Optional npm cache directory
+anas-master\chatapp1\**\.npm
+
+# Optional eslint cache
+anas-master\chatapp1\**\.eslintcache
+
+# Microbundle cache
+anas-master\chatapp1\**\.rpt2_cache
+anas-master\chatapp1\**\.rts2_cache_cjs
+anas-master\chatapp1\**\.rts2_cache_es
+anas-master\chatapp1\**\.rts2_cache_umd
+
+# Optional REPL history
+anas-master\chatapp1\**\.node_repl_history
+
+# Output of 'npm pack'
+anas-master\chatapp1\**\*.tgz
+
+# Yarn Integrity file
+anas-master\chatapp1\**\.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+anas-master\chatapp1\**\.cache
+anas-master\chatapp1\**\.parcel-cache
+
+# Next.js build output
+anas-master\chatapp1\**\.next
+
+# Nuxt.js build / generate output
+anas-master\chatapp1\**\.nuxt
+
+# Gatsby files
+anas-master\chatapp1\**\.cache
+
+# Storybook build outputs
+anas-master\chatapp1\**\.out
+anas-master\chatapp1\**\.storybook-out
+
+# Temporary folders
+anas-master\chatapp1\**\tmp
+anas-master\chatapp1\**\temp
+
+# Database
+anas-master\chatapp1\**\*.db
+anas-master\chatapp1\**\*.sqlite
+anas-master\chatapp1\**\*.sqlite3
+fly.toml

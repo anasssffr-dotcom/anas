@@ -1,0 +1,6 @@
+Backend scaffold added into /server.
+To push to GitHub:
+1) unzip or use this repo contents locally
+2) git add .
+3) git commit -m "add server scaffold"
+4) git push origin main
